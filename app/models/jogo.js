@@ -1,7 +1,7 @@
 function Jogo(dados = 5, lados = 6){
 	console.log('model: executar constructor de jogo');
 	this.dados = dados;
-	this.lados = dados;
+	this.lados = lados;
 	this.pontos = 0;
 	this.n = 0;
 }
@@ -13,7 +13,7 @@ Jogo.prototype.novoJogo = function() {
 }
 Jogo.prototype.lancarUmDado = function() {
 	var valorAleatorio = Math.random(); //Nointervalo [0,1]
-	var lado = 1 + parseInt(valorAleatorio * (this.lados-1)); 
+	var lado = 1 + Math.floor(valorAleatorio * this.lados); 
 	return lado;
 }
 
@@ -27,7 +27,7 @@ Jogo.prototype.lancarDados = function() {
 }
 
 Jogo.prototype.contarDados = function(Lancamento){
-	var contagem = Array(this.lados+1).fill(0);
+	var contagem = Array(this.lados).fill(0);
 	for (var i = 0; i < lancamento.length; i++) {
 		var numero = lancamento[i];
 		contagem[numero-1] += 1; 

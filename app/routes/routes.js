@@ -12,7 +12,8 @@ module.exports = function(application){
 
 	application.get('/lancarDados', function(req, res){
 		console.log('routes: /lancarDados');
-		res.send('Esta funcionabilidade não foi implementada.');
+		application.app.controllers.jogo.novoLancamento(application, req, res);
+	
 	});
 
 	application.get('/reiniciar', function(req, res){

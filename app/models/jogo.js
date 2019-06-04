@@ -26,7 +26,7 @@ Jogo.prototype.lancarDados = function() {
 		return lancamento;
 }
 
-Jogo.prototype.contarDados = function(Lancamento){
+Jogo.prototype.contarDados = function(lancamento){
 	var contagem = Array(this.lados).fill(0);
 	for (var i = 0; i < lancamento.length; i++) {
 		var numero = lancamento[i];
@@ -56,7 +56,26 @@ Jogo.prototype.analisarLancamento = function(lancamento){
 	return resultado;
 }
 
+Jogo.prototype.novoLancamento = function(){
 
+	console.log('model: novoLancamento');
+	var lancamento = this.lancarDados();
+	console.log('model: analisarLancamento');
+	var analiseLancamento = this.analisarLancamento(lancamento);
+	this.pontos += analiseLancamento.pontos;
+	this.n += 1;
+	console.log('model: prepara resultado');
+
+	var resultado = {
+		pontosAcumulados : this.pontos,
+		nLancamentos : this.n,
+		lancamento : lancamento,
+		jogoLancamento : analiseLancamento.jogo,
+		pontosLancamento : analiseLancamento.pontos,
+	};
+
+	return resultado;
+}
 
 
 

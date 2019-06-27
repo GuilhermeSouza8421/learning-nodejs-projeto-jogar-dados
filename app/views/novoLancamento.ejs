@@ -74,16 +74,39 @@
 						
 						</div>
 
-						<div class="col-6 p-2">
+							<div class="col-6 p-2">
+							
+								<div class="card">
+							
+								<div class="card-header">Pontos Lançamentos</div>
+
+								<div class="card-body"><%= pontosLancamento %></div>
+						
+							</div>
+						
+						</div>
+
+						<div class="col-12 p-2">
 							
 							<div class="card">
 							
-							<div class="card-header">Pontos Lançamentos</div>
+								<div class="card-header">Jogada Anterior</div>
+							
+								<div class="card-body">
+									
+									<% if (lancamentoAnterior)
+									for (var i=0; i < lancamentoAnterior.length; i++) { %>
 
-							<div class="card-body"><%= pontosLancamento %></div>
-						
+									<img src="images/dado<%= lancamentoAnterior[i]%>.png"
+									class="p-2 col-3 col-sm-2">
+
+									<% } %>
+										
+
+								</div>
+
+							</div>
 						</div>
-					</div>
 				
 				</div>
 			</div>
@@ -91,18 +114,10 @@
 			<div class="col-12 mx-auto mt-2 px-4">
 				
 				<button class="btn btn-success" type="button" id="buttonLancarDados">LancarDados</button>
-			
-			</div>
 
-			<div class="col-12 mx-auto mt-2 px-4">
-				
-				<button type="button" id="buttonReiniciarJogo">Reiniciar</button>
+				<button class="btn btn-success" type="button" id="buttonReiniciarJogo">Reiniciar</button>
 
-			</div>
-
-			<div class="col-12 mx-auto mt-2 px-4">
-				
-				<button type="button" id="buttonEncerrarJogo">Encerrar</button>
+				<button class="btn btn-success" type="button" id="buttonEncerrarJogo">Encerrar</button>
 
 			</div>
 

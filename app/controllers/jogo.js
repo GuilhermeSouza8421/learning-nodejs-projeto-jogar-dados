@@ -24,7 +24,9 @@ module.exports.reiniciar = function(application, req, res){
 		console.log('controle: pede para o model criar um novo jogo');
 		jogoModel.novoJogo();
 		console.log('controller: atualizar a view');
+		jogoModel = undefined;
 		res.render('novoJogo')
+
 	} else{
 		console.log('controller: atualizar a view para a página principal');
 		res.render('home');

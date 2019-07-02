@@ -94,10 +94,10 @@
 							
 								<div class="card-body">
 									
-									<% if (lancamentoAnterior)
-									for (var i=0; i < lancamentoAnterior.length; i++) { %>
+									<% if (historico[0])
+									for (var i=0; i < historico[0].length; i++) { %>
 
-									<img src="images/dado<%= lancamentoAnterior[i]%>.png"
+									<img src="images/dado<%= historico[0][i]%>.png"
 									class="p-2 col-3 col-sm-2">
 
 									<% } %>
